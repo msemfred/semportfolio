@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multi-site BGP Design — Semfred Martinez</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Semfred Martinez</h1>
+      </div>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="project-detail">
+      <h2>Multi-site BGP Design</h2>
+      <p>Overview: Design and validation of a multi-site WAN using BGP with route-reflectors and conditional advertisement to control route distribution and accelerate convergence.</p>
+
+      <h3>Key elements</h3>
+      <ul>
+        <li>Route reflectors to scale BGP sessions and avoid full-mesh complexity.</li>
+        <li>Community tagging and local-preference controls for traffic engineering.</li>
+        <li>Conditional advertisement to limit route propagation during outages.</li>
+      </ul>
+
+      <h3>Validation</h3>
+      <ul>
+        <li>Lab testing with topologies and failover scenarios.</li>
+        <li>Monitoring integration for BGP state and prefix counts.</li>
+      </ul>
+
+      <p><a class="btn ghost" href="index.html">← Back to portfolio</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Semfred Martinez</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
