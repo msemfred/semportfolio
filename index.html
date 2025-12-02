@@ -1,21 +1,174 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>My app</title>
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8">
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="flex justify-center items-center h-screen overflow-hidden bg-white font-sans text-center px-6">
-    <div class="w-full">
-      <span class="text-xs rounded-full mb-2 inline-block px-2 py-1 border border-amber-500/15 bg-amber-500/15 text-amber-500">🔥 New version dropped!</span>
-      <h1 class="text-4xl lg:text-6xl font-bold font-sans">
-        <span class="text-2xl lg:text-4xl text-gray-400 block font-medium">I'm ready to work,</span>
-        Ask me anything.
-      </h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Semfred Martinez — Network Engineer</title>
+  <meta name="description" content="Portfolio of Semfred — Network Engineer.  OSPF, VLANs, automation, monitoring, and design examples." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Samuel Martinez</h1>
+        <p class="role">Network Engineer — Design · Automation · Troubleshooting</p>
+      </div>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-      <img src="https://huggingface.co/deepsite/arrow.svg" class="absolute bottom-8 left-0 w-[100px] transform rotate-[30deg]" />
-    <script></script>
-  </body>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Designing reliable, observable networks that scale</h2>
+          <p>I build resilient WAN/LAN designs, automate repetitive tasks with Python and Ansible, analyze packet captures, and tune routing (BGP/OSPF) for performance and stability.</p>
+          <p class="cta-row">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn ghost" href="mailto:you@example.com">Email me</a>
+            <a class="btn ghost" href="/resume.pdf" download>Download resume</a>
+          </p>
+          <p class="contact-links">
+            <a href="https://github.com/semfredmartinez-svg" target="_blank" rel="noopener">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="hero-meta" aria-hidden="false">
+          <!-- Replace this placeholder area with a network diagram image, topology screenshot, or a dynamic widget -->
+          <div class="topology-placeholder">
+            <svg viewBox="0 0 600 360" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Topology placeholder">
+              <rect width="100%" height="100%" rx="8" fill="#0f1724"/>
+              <g fill="#dbeafe" font-family="system-ui,Segoe UI,Roboto,Arial" font-size="14">
+                <text x="40" y="40">Core Router (BGP)</text>
+                <text x="40" y="90">DC Switches (VLANs)</text>
+                <text x="40" y="140">Edge Router (WAN)</text>
+                <text x="40" y="200">Monitoring (Prometheus / Grafana)</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container about">
+      <h3>About</h3>
+      <p>I'm a network engineer focused on building operationally simple and resilient infrastructures. I enjoy automating device configuration, analyzing performance issues through telemetry and packet captures, and producing designs that are easy to hand off to operations.</p>
+    </section>
+
+    <section id="skills" class="container skills">
+      <h3>Skills</h3>
+      <div class="skill-grid">
+        <div class="skill">
+          <h4>Routing & Switching</h4>
+          <ul>
+            <li>BGP (multihop, route-reflectors, communities)</li>
+            <li>OSPF, EIGRP</li>
+            <li>VLAN, STP, EVPN/VXLAN basics</li>
+          </ul>
+        </div>
+
+        <div class="skill">
+          <h4>Automation & Scripting</h4>
+          <ul>
+            <li>Python (netmiko/napalm/pyATS)</li>
+            <li>Ansible playbooks for config and compliance</li>
+            <li>CI for network changes (Git + pipelines)</li>
+          </ul>
+        </div>
+
+        <div class="skill">
+          <h4>Observability & Troubleshooting</h4>
+          <ul>
+            <li>Wireshark & tcpdump</li>
+            <li>SNMP, NetFlow/IPFIX, sFlow</li>
+            <li>Prometheus + Grafana for network telemetry</li>
+          </ul>
+        </div>
+
+        <div class="skill">
+          <h4>Tools & Platforms</h4>
+          <ul>
+            <li>Cisco, Juniper, Arista</li>
+            <li>Terraform (network infra), Linux</li>
+            <li>Cloud networking (AWS/GCP VPCs)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container projects">
+      <h3>Selected projects</h3>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h4>Automated Config Compliance</h4>
+          <p>Built an Ansible pipeline that audits configs across 200 devices and remediates missing hardening settings. Reduced manual drift incidents by 80%.</p>
+          <p class="meta"><strong>Technologies:</strong> Ansible · Python · Git · Cisco IOS</p>
+          <p class="links"><a href="#" aria-label="More about Automated Config Compliance">Read more</a></p>
+        </article>
+
+        <article class="project-card">
+          <h4>Multi-site BGP Design</h4>
+          <p>Designed and validated BGP-based WAN with route control and fast convergence using route-reflectors and conditional advertisement.</p>
+          <p class="meta"><strong>Technologies:</strong> BGP · Route Reflectors · Junos</p>
+          <p class="links"><a href="#" aria-label="More about Multi-site BGP Design">Read more</a></p>
+        </article>
+
+        <article class="project-card">
+          <h4>Packet Capture Forensic Toolkit</h4>
+          <p>Standardized capture, storage, and analysis process using tshark and custom Python parsers to accelerate incident response.</p>
+          <p class="meta"><strong>Technologies:</strong> Wireshark · tshark · Python</p>
+          <p class="links"><a href="#" aria-label="More about Packet Capture Forensic Toolkit">Read more</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="certs" class="container certs">
+      <h3>Certifications</h3>
+      <ul class="cert-list">
+        <li>CCNA — Cisco Certified Network Associate</li>
+        <li>CCNP Enterprise — Cisco Certified Network Professional</li>
+        <li>Networking + (CompTIA)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="container contact">
+      <h3>Contact</h3>
+      <p>If you'd like to talk about a role, contract, or collaboration, email <a href="mailto:you@example.com">you@example.com</a> or connect on <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      <form class="contact-form" action="mailto:you@example.com" method="post" enctype="text/plain" aria-label="Contact form">
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <p><button type="submit" class="btn">Send</button></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Samuel Martinez · Network Engineer</p>
+    </div>
+  </footer>
+
+  <script>
+    // small UX niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
