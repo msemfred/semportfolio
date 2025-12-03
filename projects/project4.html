@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Remote VPN Deployment with Fortinet — Semfred Martinez</title>
+
+  <!-- Dedicated CSS for this page -->
+   <link rel="stylesheet" href="../assets/css/wireless.css" />
+
+</head>
+<body class="vpn-page">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Semfred Martinez</h1>
+      </div>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="project-detail card">
+      <h2>Remote VPN Deployment (Canada Client) — Fortinet</h2>
+      <p class="overview">
+        I deployed secure remote connectivity for a Canadian client using <strong>Fortinet firewalls managed via FortiCloud</strong>. 
+        This included configuring IPsec tunnel VPNs for site‑to‑site communication and SSL client VPNs for remote users. 
+        Leveraging Fortinet devices ensured enterprise‑grade encryption, centralized monitoring, and seamless integration 
+        with Microsoft Entra ID for identity‑based access control.
+      </p>
+
+      <h3>Topology Diagram</h3>
+      <figure class="topology">
+        <img src="../assets/images/fortinettopology.png" alt="Fortinet VPN Topology Diagram" />
+        <figcaption>Topology showing Fortinet IPsec tunnel between HQ and Canada site, plus SSL client VPN access.</figcaption>
+      </figure>
+
+      <h3>Goals</h3>
+      <ul>
+        <li>Provide secure site‑to‑site connectivity using Fortinet IPsec tunnels.</li>
+        <li>Enable remote employees to connect via Fortinet SSL client VPN with MFA.</li>
+        <li>Segment VPN traffic into corporate VLANs for policy enforcement.</li>
+        <li>Ensure high availability and redundancy for Fortinet VPN gateways.</li>
+        <li>Monitor VPN sessions and enforce bandwidth/QoS policies through FortiCloud.</li>
+      </ul>
+
+      <h3>Approach & Tools</h3>
+      <ul>
+        <li><strong>Fortinet IPsec Tunnel VPN:</strong> Configured Phase 1/Phase 2 parameters (IKEv2, AES‑256, SHA‑256, DH Group 14), defined peer IPs, and applied firewall rules for site‑to‑site traffic.</li>
+        <li><strong>Fortinet SSL Client VPN:</strong> Delivered client profiles via FortiClient, integrated MFA, and enabled split tunneling for optimized traffic.</li>
+        <li><strong>FortiCloud Management:</strong> Centralized monitoring, automated certificate renewal, and policy templates for VPN/firewall rules.</li>
+        <li><strong>Authentication:</strong> Integrated with Microsoft Entra ID, enforcing Conditional Access for VPN logins.</li>
+        <li><strong>Traffic Segmentation:</strong> Applied VLAN mapping so VPN users are isolated from guest networks and routed through Fortinet firewalls.</li>
+        <li><strong>Monitoring:</strong> Configured logging, session monitoring, and alerts for unusual VPN activity via FortiCloud dashboards.</li>
+      </ul>
+
+      <h3>Challenges & Solutions</h3>
+      <ul>
+        <li><strong>Latency across regions:</strong> Tuned Fortinet IPsec parameters and enabled QoS prioritization for critical apps.</li>
+        <li><strong>User onboarding:</strong> Simplified SSL VPN client installation with FortiClient and automated configuration files.</li>
+        <li><strong>Certificate management:</strong> Automated renewal via internal PKI and FortiCloud certificate profiles.</li>
+        <li><strong>Access control:</strong> Enforced Conditional Access requiring compliant devices for VPN logins.</li>
+      </ul>
+
+      <h3>Benefits</h3>
+      <ul>
+        <li>Secure encrypted tunnels between HQ and Canada site using Fortinet appliances.</li>
+        <li>Remote employees gain seamless access to corporate apps via Fortinet SSL VPN.</li>
+        <li>Improved security posture with MFA and device compliance checks.</li>
+        <li>Centralized monitoring of VPN sessions and threat detection through FortiCloud.</li>
+        <li>Scalable design supporting additional remote offices and users.</li>
+      </ul>
+
+     <!-- <h3>Artifacts</h3>
+      <p>Documentation included Fortinet IPsec configuration snippets, SSL VPN client setup guides, Conditional Access policies, and FortiCloud monitoring dashboards.</p>
+
+      <ul class="downloads">
+        <li><a href="../assets/files/fortinet-ipsec-config.pdf" download>Fortinet IPsec Tunnel Config</a></li>
+        <li><a href="../assets/files/fortinet-ssl-vpn-guide.pdf" download>Fortinet SSL VPN Client Setup Guide</a></li>
+        <li><a href="../assets/files/vpn-policy-matrix.pdf" download>Conditional Access Policy Matrix</a></li>
+        <li><a href="../assets/images/vpn-topology.png" download>Fortinet VPN Topology Diagram</a></li>
+      </ul> -->
+
+      <p><a class="btn ghost" href="../index.html#projects">← Back to Projects</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Semfred Martinez</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

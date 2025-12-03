@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enterprise Microsoft Tenant Administration — Semfred Martinez</title>
+
+  <!-- Dedicated CSS for this page -->
+  <link rel="stylesheet" href="../assets/css/wireless.css" />
+</head>
+<body class="wireless-page">
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Semfred Martinez</h1>
+      </div>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="project-detail card">
+      <h2>Enterprise Microsoft Tenant Administration</h2>
+      <p class="overview">
+        I administer a Microsoft 365 tenant end‑to‑end: configuring Intune device/app profiles, automating application
+        deployments, enforcing security baselines with Microsoft Defender for Endpoint, monitoring vulnerabilities,
+        building SharePoint communication sites, and managing dynamic distribution groups. The solution aligns identity,
+        device, app, and data protections with business operations across departments.
+      </p>
+
+      <h3>Architecture overview</h3>
+      <p>
+        The environment integrates Microsoft Entra ID for identity, Intune for endpoint management, Configuration
+        Profiles for policy enforcement, Autopilot for provisioning, Defender for Endpoint for threat protection, and
+        SharePoint/Exchange for collaboration and communications. Conditional Access, compliance policies, and role‑based
+        access control are layered to balance usability and security across Windows, macOS, iOS, and Android devices.
+      </p>
+
+      <h3>Goals</h3>
+      <ul>
+        <li>Standardize device configuration with Intune profiles and security baselines.</li>
+        <li>Automate application deployment and updates across platforms.</li>
+        <li>Continuously monitor and remediate vulnerabilities via Defender for Endpoint.</li>
+        <li>Enable department‑wide communications using SharePoint communication sites.</li>
+        <li>Simplify email operations with dynamic distribution groups and group‑based targeting.</li>
+        <li>Harden access with Conditional Access, MFA, and compliant device requirements.</li>
+      </ul>
+
+      <h3>Approach & tools</h3>
+      <ul>
+        <li><strong>Identity & access:</strong> Entra ID with password protection, MFA, Conditional Access (require compliant devices for sensitive apps), and role‑based admin controls.</li>
+        <li><strong>Device enrollment:</strong> Windows Autopilot (pre‑provisioned & user‑driven), Apple DEP/ABM, Android Enterprise; enrollment restrictions by platform and ownership.</li>
+        <li><strong>Configuration profiles:</strong> Windows, macOS, iOS/Android policies for BitLocker/FileVault, firewall, password complexity.</li>
+        <li><strong>Compliance policies:</strong> Enforce encryption,, OS version; mark devices non‑compliant and block access via Conditional Access.</li>
+        <li><strong>Application deployment (Intune):</strong> Win32 packaging (IntuneWin), MSI/Microsoft Store, VPP for iOS, Managed Google Play; required/available assignments, delivery optimization, supersedence, and uninstall on scope change.</li>
+        <li><strong>Defender for Endpoint:</strong> EDR in block mode, attack surface reduction rules, web protection, application control, and automated remediation with live response when needed.</li>
+        <li><strong>Vulnerability management:</strong> Security recommendations, exposure score tracking, prioritized remediation, CVE‑based reporting, and task assignments to owners.</li>
+        <li><strong>SharePoint communication sites:</strong> Site designs for each department (HR, Finance, Operations) with hub association, permissions, news, events, and document libraries; approval flows via Power Automate.</li>
+        <li><strong>Exchange & groups:</strong> Dynamic distribution groups using rules (department, job title, custom attributes), group‑based licensing, mailbox policies, and transport rules for external senders.</li>
+        <li><strong>Monitoring & reporting:</strong> Endpoint analytics (startup performance, app reliability), Intune device/app compliance dashboards, Defender alerts/incidents, audit logs, and adoption reports.</li>
+      </ul>
+
+      <h3>Detailed configuration highlights</h3>
+      <ul>
+        <li><strong>Windows security baseline:</strong> Enforce BitLocker with TPM, disable local admin elevation, enable SmartScreen, restrict PowerShell execution, and configure Windows Firewall with inbound block defaults.</li>
+        <li><strong>App lifecycle:</strong> Package line‑of‑business apps (silent install), rollback via previous package if failure detected.</li>
+        <li><strong>Conditional Access tiers:</strong> Tier 0 (admins) require MFA, compliant device, trusted location; Tier 1 (VIP) require MFA or device compliance; Tier 2 general users require MFA for risky sign‑ins only.</li>
+        <li><strong>SharePoint sites:</strong> Department templates with standardized navigation, news posts, retention labels, and sensitivity labels for confidential libraries.</li>
+        <li><strong>Dynamic groups:</strong> Rules based on user.department and user.accountEnabled to auto‑maintain membership</li>
+      </ul>
+
+
+      <h3>Benefits</h3>
+      <ul>
+        <li>Unified, automated endpoint management across Windows, macOS, iOS, and Android.</li>
+        <li>Measurable reduction in exposure score and faster mean‑time‑to‑remediate vulnerabilities.</li>
+        <li>Consistent security posture with baselines and Conditional Access across identities and devices.</li>
+        <li>Friction‑balanced user experience with Autopilot zero‑touch provisioning and targeted policies.</li>
+        <li>Streamlined communications and collaboration through department‑specific SharePoint sites.</li>
+      </ul>
+
+     <!-- <h3>Artifacts</h3>
+      <p>Documentation includes Intune configuration profile exports, app deployment packages, Defender onboarding scripts,
+      Conditional Access policy matrix, and SharePoint site templates.</p>
+
+      <ul class="downloads">
+        <li><a href="../assets/files/intune-config-profiles.pdf" download>Intune configuration profiles (summary)</a></li>
+        <li><a href="../assets/files/app-deployment-matrix.pdf" download>Application deployment matrix</a></li>
+        <li><a href="../assets/files/defender-onboarding-script.ps1" download>Defender onboarding script (PowerShell)</a></li>
+        <li><a href="../assets/files/conditional-access-tiers.pdf" download>Conditional Access policy tiers</a></li>
+        <li><a href="../assets/files/sharepoint-site-template.zip" download>SharePoint communication site template</a></li>
+        <li><a href="../assets/files/dynamic-groups-rules.txt" download>Dynamic distribution group rules</a></li>
+      </ul> -->
+
+      <p><a class="btn ghost" href="../index.html#projects">← Back to Projects</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Semfred Martinez</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
